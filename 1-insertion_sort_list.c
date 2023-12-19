@@ -6,25 +6,25 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp, *pnt, *nxt;
+	listint_t *temp, *pn, *nxt;
 
 	if (list && *list && (*list)->next)
 	{
 		temp = (*list)->next;
-		pnt = temp->prev;
+		pn = temp->prev;
 		nxt = temp->next;
 
 		while (temp)
 		{
-			if (temp->n < pnt->n)
+			if (temp->n < pn->n)
 			{
-				swap_list(pnt, temp, nxt, list);
+				swap_list(pn, temp, nxt, list);
 			}
 			temp = nxt;
 			if (temp)
 			{
 				nxt = temp->next;
-				pnt = temp->prev;
+				pn = temp->prev;
 			}
 		}
 	}
